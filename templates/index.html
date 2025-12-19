@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shirobase - Django Web Application Starter</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
+		<!-- Header -->
+		<header class="bg-white shadow-sm border-b border-slate-200">
+			<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+				<div class="flex justify-between items-center">
+					<div class="flex items-center space-x-2">
+						<div
+							class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-xl">S</span>
+						</div>
+						<h1 class="text-2xl font-bold text-slate-900">Shirobase</h1>
+					</div>
+					<div class="flex items-center space-x-4">
+						<a href="/api/docs/" class="text-slate-600 hover:text-blue-600 transition-colors">API Docs</a>
+						<a href="/admin/" class="text-slate-600 hover:text-blue-600 transition-colors">Admin</a>
+						<a
+							href="https://github.com/TrippleA-Ashaba/shirobase"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex items-center space-x-1 text-slate-600 hover:text-blue-600 transition-colors"
+							title="View on GitHub">
+							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+								<path
+									fill-rule="evenodd"
+									d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+									clip-rule="evenodd"></path>
+							</svg>
+							<span class="hidden sm:inline">GitHub</span>
+						</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Hero Section -->
+		<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<div class="text-center mb-16">
+				<h2 class="text-5xl font-bold text-slate-900 mb-4">Production-Ready Django Web Application</h2>
+				<p class="text-xl text-slate-600 max-w-3xl mx-auto">
+					A robust, scalable web application foundation built with Django views and templates. Featuring
+					complete authentication flows, comprehensive user management, and enterprise-grade security out of the box.
+				</p>
+			</div>
+
+			<!-- Quick Links -->
+			<div class="text-center mb-16">
+				<h3 class="text-xl font-semibold text-slate-900 mb-4">Quick Links</h3>
+				<div class="flex flex-wrap justify-center gap-4">
+					<a
+						href="https://github.com/TrippleA-Ashaba/shirobase"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center space-x-2 bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-colors shadow-md hover:shadow-lg">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								fill-rule="evenodd"
+								d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+								clip-rule="evenodd"></path>
+						</svg>
+						<span>View on GitHub</span>
+					</a>
+					<a
+						href="/admin/"
+						class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">
+						Admin Dashboard
+					</a>
+					<a
+						href="/api/docs/"
+						class="bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors shadow-md hover:shadow-lg">
+						API Documentation (Optional)
+					</a>
+				</div>
+			</div>
+
+			<!-- Getting Started Section -->
+			<div
+				class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-8 md:p-12 mb-12 text-white">
+				<h3 class="text-3xl font-bold mb-2 text-center">Getting Started</h3>
+				<p class="text-slate-300 text-center mb-4 max-w-2xl mx-auto">
+					Follow these simple steps to get Shirobase up and running on your local machine
+				</p>
+
+				<!-- Command Usage Note -->
+				<div class="bg-blue-900/50 border border-blue-500/50 rounded-lg p-4 mb-8 max-w-3xl mx-auto">
+					<div class="flex items-start">
+						<div class="flex-shrink-0 mr-3">
+							<span class="text-2xl">💡</span>
+						</div>
+						<div>
+							<h5 class="font-semibold text-blue-200 mb-1">Command Usage</h5>
+							<p class="text-sm text-blue-100">
+								Use
+								<code class="bg-slate-800 px-2 py-1 rounded text-green-400"
+									>uv run &lt;command&gt;</code
+								>
+								if you don't have a virtual environment activated. Otherwise, use
+								<code class="bg-slate-800 px-2 py-1 rounded text-green-400"
+									>python &lt;command&gt;</code
+								>
+								directly.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+					<!-- Prerequisites -->
+					<div class="bg-slate-700/50 rounded-xl p-6 backdrop-blur">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-xl font-bold">1</span>
+							</div>
+							<h4 class="text-xl font-semibold">Prerequisites</h4>
+						</div>
+						<ul class="space-y-2 text-slate-200">
+							<li class="flex items-start">
+								<span class="mr-2 text-blue-400">▸</span>
+								<span>Python 3.14+ installed</span>
+							</li>
+							<li class="flex items-start">
+								<span class="mr-2 text-blue-400">▸</span>
+								<span
+									><code class="bg-slate-800 px-2 py-1 rounded text-sm">uv</code> package
+									manager</span
+								>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Clone Repository -->
+					<div class="bg-slate-700/50 rounded-xl p-6 backdrop-blur">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-xl font-bold">2</span>
+							</div>
+							<h4 class="text-xl font-semibold">Clone Repository</h4>
+						</div>
+						<div class="bg-slate-800 rounded-lg p-3 overflow-x-auto">
+							<code class="text-sm text-green-400">
+								>> git clone https://github.com/TrippleA-Ashaba/shirobase.git your-project<br />
+								>> cd your-project
+							</code>
+						</div>
+					</div>
+
+					<!-- Install Dependencies -->
+					<div class="bg-slate-700/50 rounded-xl p-6 backdrop-blur">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-xl font-bold">3</span>
+							</div>
+							<h4 class="text-xl font-semibold">Install Dependencies</h4>
+						</div>
+						<div class="bg-slate-800 rounded-lg p-3 overflow-x-auto">
+							<code class="text-sm text-green-400">uv sync</code>
+						</div>
+						<p class="text-sm text-slate-300 mt-2">Lightning-fast dependency installation with uv</p>
+					</div>
+
+					<!-- Environment Setup -->
+					<div class="bg-slate-700/50 rounded-xl p-6 backdrop-blur">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-xl font-bold">4</span>
+							</div>
+							<h4 class="text-xl font-semibold">Configure Environment</h4>
+						</div>
+						<p class="text-slate-200 text-sm mb-2">
+							Create a <code class="bg-slate-800 px-2 py-1 rounded">.env</code> file:
+						</p>
+						<div class="bg-slate-800 rounded-lg p-3 overflow-x-auto">
+							<code class="text-sm text-green-400">
+								SECRET_KEY=your-secret-key<br />
+								DEBUG=True<br />
+								USE_SQLITE=False<br />
+								DB_NAME=your_database_name<br />
+								DB_USER=your_database_user<br />
+								DB_PASSWORD=your_database_password<br />
+								DB_HOST=your_database_host<br />
+								DB_PORT=your_database_port<br />
+								ALLOWED_HOSTS=localhost,127.0.0.1<br />
+								ALLOWED_HOSTS=localhost,127.0.0.1<br />
+							</code>
+						</div>
+					</div>
+
+					<!-- Run Migrations -->
+					<div class="bg-slate-700/50 rounded-xl p-6 backdrop-blur">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-xl font-bold">5</span>
+							</div>
+							<h4 class="text-xl font-semibold">Run Migrations</h4>
+						</div>
+						<div class="bg-slate-800 rounded-lg p-3 overflow-x-auto">
+							<code class="text-sm text-green-400">
+								uv run python manage.py migrate<br />
+								<span class="text-slate-500"># or: python manage.py migrate</span>
+							</code>
+						</div>
+					</div>
+
+					<!-- Create Superuser -->
+					<div class="bg-slate-700/50 rounded-xl p-6 backdrop-blur">
+						<div class="flex items-center mb-4">
+							<div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-xl font-bold">6</span>
+							</div>
+							<h4 class="text-xl font-semibold">Create Superuser</h4>
+						</div>
+						<div class="bg-slate-800 rounded-lg p-3 overflow-x-auto">
+							<code class="text-sm text-green-400">
+								uv run python manage.py createsuperuser<br />
+								<span class="text-slate-500"># or: python manage.py createsuperuser</span>
+							</code>
+						</div>
+					</div>
+				</div>
+
+				<!-- Start Server -->
+				<div class="mt-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-center">
+					<h4 class="text-2xl font-bold mb-3">🚀 Launch Your Server</h4>
+					<div class="bg-black/30 rounded-lg p-4 inline-block mb-3">
+						<code class="text-lg text-green-300">
+							uv run python manage.py runserver<br />
+							<span class="text-sm text-blue-200"># or: python manage.py runserver</span>
+						</code>
+					</div>
+					<p class="text-blue-100">
+						Visit <code class="bg-white/20 px-3 py-1 rounded font-mono">http://localhost:8000</code> to see
+						your application running!
+					</p>
+				</div>
+
+				<!-- Running Tests -->
+				<div class="mt-8 border-t border-slate-600 pt-8">
+					<h4 class="text-2xl font-bold mb-4 text-center">🧪 Running Tests</h4>
+					<div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+						<div class="bg-slate-700/50 rounded-lg p-4">
+							<p class="text-sm text-slate-300 mb-2">Run all tests:</p>
+							<div class="bg-slate-800 rounded p-2">
+								<code class="text-sm text-green-400">
+									uv run pytest<br />
+									<span class="text-slate-500"># or: pytest</span>
+								</code>
+							</div>
+						</div>
+						<div class="bg-slate-700/50 rounded-lg p-4">
+							<p class="text-sm text-slate-300 mb-2">Run with coverage:</p>
+							<div class="bg-slate-800 rounded p-2">
+								<code class="text-sm text-green-400">
+									uv run pytest --cov<br />
+									<span class="text-slate-500"># or: pytest --cov</span>
+								</code>
+							</div>
+						</div>
+						<div class="bg-slate-700/50 rounded-lg p-4">
+							<p class="text-sm text-slate-300 mb-2">Run specific test file:</p>
+							<div class="bg-slate-800 rounded p-2">
+								<code class="text-sm text-green-400">
+									uv run pytest path/to/test.py<br />
+									<span class="text-slate-500"># or: pytest path/to/test.py</span>
+								</code>
+							</div>
+						</div>
+						<div class="bg-slate-700/50 rounded-lg p-4">
+							<p class="text-sm text-slate-300 mb-2">Run specific test function:</p>
+							<div class="bg-slate-800 rounded p-2">
+								<code class="text-sm text-green-400">
+									uv run pytest path/to/test.py::test_name<br />
+									<span class="text-slate-500"># or: pytest path/to/test.py::test_name</span>
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- About Section -->
+			<div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+				<h3 class="text-2xl font-bold text-slate-900 mb-4">About the Project</h3>
+				<div class="prose prose-slate max-w-none">
+					<p class="text-slate-700 leading-relaxed mb-4">
+						Shirobase is a carefully crafted Django web application starter template designed to accelerate your
+						development process. It eliminates the tedious setup phase by providing a solid foundation with
+						authentication, user management, and essential middleware configurations already in place.
+					</p>
+					<p class="text-slate-700 leading-relaxed mb-4">
+						Built with scalability and security in mind, Shirobase integrates industry-standard libraries
+						like django-allauth for comprehensive account management, Django templates for server-side rendering,
+						and session-based authentication. Whether you're building a web application, SaaS platform, or
+						content management system, Shirobase provides the building blocks you need.
+					</p>
+					<p class="text-slate-700 leading-relaxed">
+						The architecture follows Django best practices with a modular app structure, making it easy to
+						extend and maintain. Built-in features include password reset flows, email verification, audit logging,
+						and optional REST API support if needed. The project focuses on Django views and templates as the
+						primary approach to building web interfaces.
+					</p>
+				</div>
+			</div>
+
+			<!-- Tech Stack -->
+			<div class="mb-12">
+				<h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">Tech Stack</h3>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Core Framework -->
+					<div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+						<div class="flex items-center mb-3">
+							<div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-2xl">🐍</span>
+							</div>
+							<h4 class="text-lg font-semibold text-slate-900">Core Framework</h4>
+						</div>
+						<ul class="space-y-2 text-slate-600">
+							<li class="flex items-center"><span class="mr-2">•</span> Django 5.2+</li>
+							<li class="flex items-center"><span class="mr-2">•</span> Django REST Framework</li>
+							<li class="flex items-center"><span class="mr-2">•</span> Python 3.14+</li>
+						</ul>
+					</div>
+
+					<!-- Authentication -->
+					<div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+						<div class="flex items-center mb-3">
+							<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-2xl">🔐</span>
+							</div>
+							<h4 class="text-lg font-semibold text-slate-900">Authentication</h4>
+						</div>
+						<ul class="space-y-2 text-slate-600">
+							<li class="flex items-center"><span class="mr-2">•</span> SimpleJWT</li>
+							<li class="flex items-center"><span class="mr-2">•</span> dj-rest-auth</li>
+							<li class="flex items-center"><span class="mr-2">•</span> django-allauth</li>
+						</ul>
+					</div>
+
+					<!-- Database -->
+					<div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+						<div class="flex items-center mb-3">
+							<div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-2xl">💾</span>
+							</div>
+							<h4 class="text-lg font-semibold text-slate-900">Database</h4>
+						</div>
+						<ul class="space-y-2 text-slate-600">
+							<li class="flex items-center"><span class="mr-2">•</span> PostgreSQL</li>
+							<li class="flex items-center"><span class="mr-2">•</span> SQLite (Dev)</li>
+						</ul>
+					</div>
+
+					<!-- API Documentation -->
+					<div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+						<div class="flex items-center mb-3">
+							<div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-2xl">📚</span>
+							</div>
+							<h4 class="text-lg font-semibold text-slate-900">API Documentation</h4>
+						</div>
+						<ul class="space-y-2 text-slate-600">
+							<li class="flex items-center"><span class="mr-2">•</span> drf-spectacular</li>
+							<li class="flex items-center"><span class="mr-2">•</span> Swagger UI</li>
+							<li class="flex items-center"><span class="mr-2">•</span> OpenAPI 3.0</li>
+						</ul>
+					</div>
+
+					<!-- Developer Tools -->
+					<div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+						<div class="flex items-center mb-3">
+							<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-2xl">🛠️</span>
+							</div>
+							<h4 class="text-lg font-semibold text-slate-900">Developer Tools</h4>
+						</div>
+						<ul class="space-y-2 text-slate-600">
+							<li class="flex items-center"><span class="mr-2">•</span> Django Debug Toolbar</li>
+							<li class="flex items-center"><span class="mr-2">•</span> django-extensions</li>
+							<li class="flex items-center"><span class="mr-2">•</span> Loguru Logging</li>
+						</ul>
+					</div>
+
+					<!-- Additional Features -->
+					<div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+						<div class="flex items-center mb-3">
+							<div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-3">
+								<span class="text-2xl">⚡</span>
+							</div>
+							<h4 class="text-lg font-semibold text-slate-900">Additional Features</h4>
+						</div>
+						<ul class="space-y-2 text-slate-600">
+							<li class="flex items-center"><span class="mr-2">•</span> Audit Logging</li>
+							<li class="flex items-center"><span class="mr-2">•</span> Author Tracking</li>
+							<li class="flex items-center"><span class="mr-2">•</span> WhiteNoise Static Files</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Features Section -->
+			<div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 mb-12">
+				<h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">Key Features</h3>
+				<div class="grid md:grid-cols-2 gap-6">
+					<div class="flex items-start space-x-3">
+						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold">✓</span>
+						</div>
+						<div>
+							<h4 class="font-semibold text-slate-900 mb-1">Session Authentication</h4>
+							<p class="text-slate-600 text-sm">
+								Secure, session-based authentication with Django Allauth integration
+							</p>
+						</div>
+					</div>
+					<div class="flex items-start space-x-3">
+						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold">✓</span>
+						</div>
+						<div>
+							<h4 class="font-semibold text-slate-900 mb-1">User Management</h4>
+							<p class="text-slate-600 text-sm">
+								Complete user registration, login, and profile management flows
+							</p>
+						</div>
+					</div>
+					<div class="flex items-start space-x-3">
+						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold">✓</span>
+						</div>
+						<div>
+							<h4 class="font-semibold text-slate-900 mb-1">Password Reset</h4>
+							<p class="text-slate-600 text-sm">
+								Email-based password reset with secure token generation
+							</p>
+						</div>
+					</div>
+					<div class="flex items-start space-x-3">
+						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold">✓</span>
+						</div>
+						<div>
+							<h4 class="font-semibold text-slate-900 mb-1">Template-Based UI</h4>
+							<p class="text-slate-600 text-sm">Modern, responsive templates with Django template engine</p>
+						</div>
+					</div>
+					<div class="flex items-start space-x-3">
+						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold">✓</span>
+						</div>
+						<div>
+							<h4 class="font-semibold text-slate-900 mb-1">Audit Logging</h4>
+							<p class="text-slate-600 text-sm">
+								Track all model changes with comprehensive audit trails
+							</p>
+						</div>
+					</div>
+					<div class="flex items-start space-x-3">
+						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold">✓</span>
+						</div>
+						<div>
+							<h4 class="font-semibold text-slate-900 mb-1">Docker Ready</h4>
+							<p class="text-slate-600 text-sm">
+								Containerized setup for consistent development and deployment
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-white border-t border-slate-200 mt-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+				<div class="flex flex-col items-center space-y-4">
+					<div class="flex items-center space-x-6">
+						<a
+							href="https://github.com/TrippleA-Ashaba/shirobase"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex items-center space-x-2 text-slate-600 hover:text-slate-900 transition-colors group">
+							<svg
+								class="w-6 h-6 group-hover:scale-110 transition-transform"
+								fill="currentColor"
+								viewBox="0 0 24 24"
+								aria-hidden="true">
+								<path
+									fill-rule="evenodd"
+									d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+									clip-rule="evenodd"></path>
+							</svg>
+							<span class="font-medium">View on GitHub</span>
+						</a>
+						<span class="text-slate-300">•</span>
+						<a href="/api/docs/" class="text-slate-600 hover:text-blue-600 transition-colors"
+							>API Documentation</a
+						>
+						<span class="text-slate-300">•</span>
+						<a href="/admin/" class="text-slate-600 hover:text-blue-600 transition-colors">Admin Panel</a>
+					</div>
+					<p class="text-center text-slate-600 text-sm">
+						Built with ❤️ using Django
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

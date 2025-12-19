@@ -1,0 +1,10 @@
+- Consider a setup script that prompts for project name X
+- DRF throttling configuration
+- Add tests for UserViewSet
+- Add filtering Examples
+- Add example code for smartmin (diff user groups can view diff lists)
+- Create custom email templates in templates/account/email/
+- Add custom exception handler for consistent API responses
+- Add GitHub Actions or GitLab CI examples
+- Add .pre-commit-config.yaml with ruff, pytest, etc.
+- Use URL versioning like /api/v1/
