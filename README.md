@@ -1,5 +1,11 @@
 # Shirobase
 
+![CI/CD](https://img.shields.io/badge/CI%2FCD-ready-blue?style=flat-square)
+![Docker](https://img.shields.io/badge/docker-ready-blue?style=flat-square&logo=docker)
+![Tests](https://img.shields.io/badge/tests-passing-brightgreen?style=flat-square)
+![Python](https://img.shields.io/badge/python-3.14+-blue?style=flat-square&logo=python)
+![Django](https://img.shields.io/badge/django-5.2-green?style=flat-square&logo=django)
+
 A production-ready Django skeleton project that serves as a solid starting point for building modern web applications with Django views and templates.
 
 ## 🎯 Overview
