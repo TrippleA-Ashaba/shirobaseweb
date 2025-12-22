@@ -16,9 +16,11 @@ class ProfileView(TemplateView):
         context = super().get_context_data(**kwargs)
         user = self.request.user
         context["user"] = user
-        # Get profile if it exists
-        if hasattr(user, "profile"):
+        # Get profile if it exists, otherwise None
+        try:
             context["profile"] = user.profile
+        except Profile.DoesNotExist:
+            context["profile"] = None
         return context
 
 
@@ -31,14 +33,22 @@ class PhoneChangeView(FormView):
     def get_initial(self):
         initial = super().get_initial()
         user = self.request.user
-        if hasattr(user, "profile") and user.profile.phone:
-            initial["phone"] = user.profile.phone
+        try:
+            if user.profile and user.profile.phone:
+                initial["phone"] = user.profile.phone
+        except Profile.DoesNotExist:
+            pass
         return initial
 
     def form_valid(self, form):
         user = self.request.user
         profile, created = Profile.objects.get_or_create(user=user)
-        profile.phone = form.cleaned_data.get("phone")
+        phone = form.cleaned_data.get("phone")
+        # Handle empty phone - set to None if empty string or None
+        if phone:
+            profile.phone = phone
+        else:
+            profile.phone = None
         profile.save()
         messages.success(self.request, "Phone number updated successfully.")
         return redirect("account_profile")
@@ -48,11 +58,13 @@ class PhoneChangeView(FormView):
         user = self.request.user
         context["user"] = user
         # Get profile if it exists
-        if hasattr(user, "profile"):
-            context["profile"] = user.profile
-            context["phone"] = user.profile.phone
+        try:
+            profile = user.profile
+            context["profile"] = profile
+            context["phone"] = profile.phone
             context["phone_verified"] = True  # Simplified - you can add verification logic later
-        else:
+        except Profile.DoesNotExist:
+            context["profile"] = None
             context["phone"] = None
             context["phone_verified"] = False
         return context
