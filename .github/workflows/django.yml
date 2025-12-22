@@ -9,9 +9,6 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: ./backend
         env:
             SECRET_KEY: "django-insecure-(1b!ufhb@g*wrs9-*e_s!ad#5!$t#a#-!b)pm5++n^9u)uuir+"
             DEBUG: True
