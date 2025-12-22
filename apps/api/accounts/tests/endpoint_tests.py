@@ -211,7 +211,7 @@ class AccountEndpointTests(APITestCase):
         verification_key = key_match.group(1)
 
         # Test that the user can verify their email
-        confirm_url = f"/api/accounts/confirm-email/{verification_key}/"
+        confirm_url = f"/accounts/confirm-email/{verification_key}/"
         response = self.client.post(confirm_url)
 
         # The response should be successful (usually redirects or returns success)
@@ -236,7 +236,7 @@ class AccountEndpointTests(APITestCase):
         """Test that invalid verification keys are rejected"""
         # Try to verify with an invalid key
         invalid_key = "invalid-key-12345"
-        confirm_url = f"/api/accounts/confirm-email/{invalid_key}/"
+        confirm_url = f"/accounts/confirm-email/{invalid_key}/"
 
         response = self.client.post(confirm_url)
 
@@ -267,7 +267,7 @@ class AccountEndpointTests(APITestCase):
         verification_key = key_match.group(1)
 
         # Verify the email first time
-        confirm_url = f"/api/accounts/confirm-email/{verification_key}/"
+        confirm_url = f"/accounts/confirm-email/{verification_key}/"
         response = self.client.post(confirm_url)
         self.assertIn(response.status_code, [200, 302, 201])
 
@@ -311,7 +311,7 @@ class AccountEndpointTests(APITestCase):
         )
 
         # Check that the verification URL is properly formatted
-        url_pattern = r"/api/accounts/confirm-email/[^/\s]+/"
+        url_pattern = r"/accounts/confirm-email/[^/\s]+/"
         self.assertIsNotNone(
             re.search(url_pattern, email_body), "Properly formatted verification URL not found in email"
         )

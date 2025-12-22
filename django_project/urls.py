@@ -24,6 +24,8 @@ from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
+from apps.accounts.views import PhoneChangeView, ProfileView
+
 
 @method_decorator(login_not_required, name="dispatch")
 class IndexView(TemplateView):
@@ -38,8 +40,11 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # ============================ All Auth URLs ================================================
     path("api/accounts/", include("apps.api.accounts.urls", namespace="accounts")),
+    # Custom profile page (must be before allauth.urls to take precedence)
+    path("accounts/profile/", ProfileView.as_view(), name="account_profile"),
+    path("accounts/phone/change/", PhoneChangeView.as_view(), name="account_change_phone"),
     # For email verification
-    path("api/accounts/", include("allauth.urls")),
+    path("accounts/", include("allauth.urls")),
     # ============================ Users URLs ================================================
     path("api/users/", include("apps.api.users.urls", namespace="users")),
     path("", IndexView.as_view(), name="index"),

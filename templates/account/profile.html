@@ -1,0 +1,87 @@
+{% extends "account/base_manage.html" %}
+{% load i18n %}
+{% load allauth %}
+
+{% block head_title %}
+    {% trans "Profile" %}
+{% endblock head_title %}
+
+{% block content %}
+    {% element h1 %}
+        {% trans "Profile" %}
+    {% endelement %}
+
+    <div class="space-y-6">
+        <!-- User Information -->
+        <div class="bg-slate-50 rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-slate-900 mb-4">{% trans "Account Information" %}</h2>
+            <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                    <dt class="text-sm font-medium text-slate-500">{% trans "Username" %}</dt>
+                    <dd class="mt-1 text-sm text-slate-900">{{ user.username }}</dd>
+                </div>
+                <div>
+                    <dt class="text-sm font-medium text-slate-500">{% trans "Email" %}</dt>
+                    <dd class="mt-1 text-sm text-slate-900">{{ user.email }}</dd>
+                </div>
+                <div>
+                    <dt class="text-sm font-medium text-slate-500">{% trans "First Name" %}</dt>
+                    <dd class="mt-1 text-sm text-slate-900">{{ user.first_name|default:"—" }}</dd>
+                </div>
+                <div>
+                    <dt class="text-sm font-medium text-slate-500">{% trans "Last Name" %}</dt>
+                    <dd class="mt-1 text-sm text-slate-900">{{ user.last_name|default:"—" }}</dd>
+                </div>
+                {% if user.date_joined %}
+                <div>
+                    <dt class="text-sm font-medium text-slate-500">{% trans "Member Since" %}</dt>
+                    <dd class="mt-1 text-sm text-slate-900">{{ user.date_joined|date:"F d, Y" }}</dd>
+                </div>
+                {% endif %}
+                {% if user.last_login %}
+                <div>
+                    <dt class="text-sm font-medium text-slate-500">{% trans "Last Login" %}</dt>
+                    <dd class="mt-1 text-sm text-slate-900">{{ user.last_login|date:"F d, Y g:i A" }}</dd>
+                </div>
+                {% endif %}
+            </dl>
+        </div>
+
+        <!-- Profile Information -->
+        {% if profile %}
+        <div class="bg-slate-50 rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-slate-900 mb-4">{% trans "Profile Information" %}</h2>
+            <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {% if profile.phone %}
+                <div>
+                    <dt class="text-sm font-medium text-slate-500">{% trans "Phone Number" %}</dt>
+                    <dd class="mt-1 text-sm text-slate-900">{{ profile.phone }}</dd>
+                </div>
+                {% endif %}
+            </dl>
+        </div>
+        {% endif %}
+
+        <!-- Quick Actions -->
+        <div class="bg-blue-50 rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-slate-900 mb-4">{% trans "Quick Actions" %}</h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="{% url 'account_email' %}" class="inline-flex items-center px-4 py-2 bg-blue-600 !text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors no-underline" style="color: white !important; text-decoration: none !important;">
+                    {% trans "Manage Email" %}
+                </a>
+                <a href="{% url 'account_change_password' %}" class="inline-flex items-center px-4 py-2 bg-blue-600 !text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors no-underline" style="color: white !important; text-decoration: none !important;">
+                    {% trans "Change Password" %}
+                </a>
+                
+                <a href="{% url 'account_change_phone' %}" class="inline-flex items-center px-4 py-2 bg-blue-600 !text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors no-underline" style="color: white !important; text-decoration: none !important;">
+                    {% trans "Change Phone" %}
+                </a>
+                
+                <a href="{% url 'account_logout' %}" class="inline-flex items-center px-4 py-2 bg-red-600 !text-white rounded-lg font-semibold hover:bg-red-700 transition-colors no-underline" style="color: white !important; text-decoration: none !important;">
+                    {% trans "Logout" %}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
