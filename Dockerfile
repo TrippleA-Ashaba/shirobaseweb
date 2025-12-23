@@ -12,6 +12,7 @@ WORKDIR /app
 # Install system dependencies
 # Updates apt and installs necessary libraries for building Python and system dependencies.
 RUN apt-get update && apt-get install -y \
+    build-essential \
     --no-install-recommends && \
     # Remove unnecessary files
     apt-get clean && \
