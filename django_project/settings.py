@@ -245,8 +245,13 @@ SPECTACULAR_SETTINGS = {
 }
 
 # ===================================== Email settings =====================================
-# https://docs.djangoproject.com/en/5.1/topics/email/
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# https://docs.djangoproject.com/en/6.1/topics/email/
+# https://docs.djangoproject.com/en/6.1/howto/mailers-migration/
+MAILERS = {
+    "default": {
+        "BACKEND": "django.core.mail.backends.console.EmailBackend",
+    },
+}
 
 # =============================== Debug toolbar & browser reload  ===============================
 INTERNAL_IPS = ["127.0.0.1"]
