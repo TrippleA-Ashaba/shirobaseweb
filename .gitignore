@@ -12,3 +12,4 @@ db.sqlite3
 logs/
 .env
 .vscode
+.DS_Store
