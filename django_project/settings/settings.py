@@ -19,7 +19,7 @@ from loguru import logger
 from django_project.permissions import GROUP_PERMISSIONS, PERMISSIONS  # noqa: F401
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 load_dotenv()
 
